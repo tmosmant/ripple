@@ -9,4 +9,5 @@ public class Colors
 {
 	public final static int BLUE = Color.parseColor("#0298db");
 	public final static int BLUE_DARK = Color.parseColor("#065c9f");
+	public final static int BLACK = Color.parseColor("#000000");
 }

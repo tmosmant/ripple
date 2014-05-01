@@ -9,11 +9,18 @@ import fr.crossroads.ripple.ui.graphics.Colors;
 public class Paints
 {
 	public final static Paint BLUE = new Paint();
+	public final static Paint BLACK_CIRCLE = new Paint();
 
-	static {
+	static
+	{
 		BLUE.setColor(Colors.BLUE);
 		BLUE.setStyle(Paint.Style.FILL);
 		BLUE.setAntiAlias(true);
+
+		BLACK_CIRCLE.setColor(Colors.BLACK);
+		BLACK_CIRCLE.setStyle(Paint.Style.STROKE);
+		BLACK_CIRCLE.setStrokeWidth(5);
+		BLACK_CIRCLE.setAntiAlias(true);
 	}
 
 }
