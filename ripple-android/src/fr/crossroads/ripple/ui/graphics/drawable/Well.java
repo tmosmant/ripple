@@ -23,6 +23,8 @@ public class Well extends Drawable
 	private final Point position;
 	private final int radius;
 
+	private boolean hovered = false;
+
 	private final Paint paint;
 
 	private Well(Context context, Point center, int radius, Paint paint)
@@ -59,13 +61,23 @@ public class Well extends Drawable
 		return new Well(context, center, radius, paint);
 	}
 
-	public boolean contains(MotionEvent event) {
+	public void setHovered(boolean hovered)
+	{
+		this.hovered = hovered;
+	}
+
+	public boolean contains(MotionEvent event)
+	{
 		return Math.pow(event.getX() - position.x, 2) + Math.pow(event.getY() - position.y, 2) < Math.pow(radius, 2);
 	}
 
 	@Override public void draw(Canvas canvas)
 	{
 		canvas.drawCircle(position.x, position.y, radius, paint);
+		if ( hovered )
+		{
+			canvas.drawCircle(position.x, position.y, radius, Paints.BLACK_CIRCLE);
+		}
 	}
 
 	@Override public void setAlpha(int i)
